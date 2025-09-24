@@ -37,7 +37,7 @@
   
   .section-title {
     font-family: 'Cinzel', serif;
-    color: #CD7F32;
+    color: #ffffff;
   }
   
   .body-text {
@@ -58,12 +58,12 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #E0AA14, #CD7F32);
+    background: linear-gradient(to bottom, #1444E1, #374FA1);
     border-radius: 4px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, #CD7F32, #B8691E);
+    background: linear-gradient(to bottom, #374FA1, #394261);
   }
   
   /* Smooth transitions for all interactive elements */

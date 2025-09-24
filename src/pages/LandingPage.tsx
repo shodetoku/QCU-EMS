@@ -28,13 +28,13 @@ const LandingPage: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/apply"
-                className="bg-qcu-bronze hover:bg-yellow-500 text-qcu-dark px-8 py-4 rounded-2xl text-lg font-semibold inline-flex items-center justify-center gap-2 transition-colors shadow-lg readable-text"
+                className="bg-white hover:bg-blue-50 text-qcu-primary px-8 py-4 rounded-2xl text-lg font-semibold inline-flex items-center justify-center gap-2 transition-colors shadow-lg readable-text border-2 border-white"
               >
                 Apply Now <ArrowRight className="h-5 w-5" />
               </Link>
               <Link
                 to="/programs"
-                className="border-2 border-qcu-bronze hover:bg-qcu-bronze hover:text-qcu-dark text-qcu-bronze px-8 py-4 rounded-2xl text-lg font-semibold inline-flex items-center justify-center transition-colors readable-text"
+                className="border-2 border-white hover:bg-white hover:text-qcu-primary text-white px-8 py-4 rounded-2xl text-lg font-semibold inline-flex items-center justify-center transition-colors readable-text"
               >
                 View Programs
               </Link>
@@ -72,7 +72,8 @@ const LandingPage: React.FC = () => {
             </div>
 
             <div className="text-center p-8 rounded-2xl bg-white border border-qcu-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="bg-qcu-bronze/10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+              <div class="bg-qcu-primary bg-opacity-10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+
                 <Users className="h-10 w-10 text-qcu-bronze" />
               </div>
               <h3 className="text-2xl font-semibold section-title mb-4">
@@ -171,7 +172,7 @@ const LandingPage: React.FC = () => {
               <div className="mt-6">
                 <Link
                   to="/apply"
-                  className="bg-qcu-bronze hover:bg-yellow-500 text-qcu-dark px-8 py-4 rounded-2xl font-semibold inline-flex items-center gap-2 transition-colors shadow-lg readable-text"
+                  className="bg-gradient-to-r from-qcu-primary to-qcu-secondary hover:from-blue-600 hover:to-blue-700 text-white px-8 py-4 rounded-2xl font-semibold inline-flex items-center gap-2 transition-colors shadow-lg readable-text"
                 >
                   Start Application <ArrowRight className="h-4 w-4" />
                 </Link>

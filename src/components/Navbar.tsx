@@ -73,10 +73,10 @@ const Navbar: React.FC = () => {
                 to={item.path}
                 className={`${
                   item.isButton
-                    ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 text-qcu-dark px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border-2 border-yellow-400'
+                    ? 'bg-gradient-to-r from-white to-blue-50 hover:from-blue-50 hover:to-white text-qcu-primary px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border-2 border-white'
                     : isActive(item.path)
-                    ? 'text-yellow-300 font-bold px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border-2 border-yellow-300/50 shadow-lg'
-                    : 'text-white hover:text-yellow-300 px-6 py-3 rounded-full hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-300 font-medium'
+                    ? 'text-white font-bold px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/50 shadow-lg'
+                    : 'text-white hover:text-blue-100 px-6 py-3 rounded-full hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-300 font-medium'
                 } relative group text-lg`}
               >
                 {item.name}
@@ -90,7 +90,7 @@ const Navbar: React.FC = () => {
             
             {/* Student Portal Dropdown */}
             <div className="relative group ml-4">
-              <button className="flex items-center text-white hover:text-yellow-300 px-6 py-3 rounded-full hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-300 font-medium text-lg">
+              <button className="flex items-center text-white hover:text-blue-100 px-6 py-3 rounded-full hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-300 font-medium text-lg">
                 <User className="h-5 w-5 mr-2" />
                 Student Portal
                 <ChevronDown className="h-5 w-5 ml-2 transform group-hover:rotate-180 transition-transform duration-300" />
@@ -158,10 +158,10 @@ const Navbar: React.FC = () => {
                 to={item.path}
                 className={`${
                   item.isButton
-                    ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 text-qcu-dark font-bold shadow-lg text-center'
+                    ? 'bg-gradient-to-r from-white to-blue-50 hover:from-blue-50 hover:to-white text-qcu-primary font-bold shadow-lg text-center'
                     : isActive(item.path)
-                    ? 'text-yellow-300 font-bold bg-white/10 backdrop-blur-sm border-l-4 border-yellow-300'
-                    : 'text-white hover:text-yellow-300 hover:bg-white/10 hover:backdrop-blur-sm'
+                    ? 'text-white font-bold bg-white/10 backdrop-blur-sm border-l-4 border-white'
+                    : 'text-white hover:text-blue-100 hover:bg-white/10 hover:backdrop-blur-sm'
                 } block px-6 py-4 rounded-xl text-lg transition-all duration-300 transform hover:translate-x-2`}
                 onClick={() => setIsMenuOpen(false)}
                 style={{ 
@@ -177,7 +177,7 @@ const Navbar: React.FC = () => {
             <div className="border-t border-white/20 pt-4 mt-4">
               <Link
                 to="/dashboard-login"
-                className="flex items-center text-white hover:text-yellow-300 hover:bg-white/10 hover:backdrop-blur-sm px-6 py-4 rounded-xl text-lg transition-all duration-300 transform hover:translate-x-2 font-medium"
+                className="flex items-center text-white hover:text-blue-100 hover:bg-white/10 hover:backdrop-blur-sm px-6 py-4 rounded-xl text-lg transition-all duration-300 transform hover:translate-x-2 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <User className="h-6 w-6 mr-3" />
@@ -187,10 +187,10 @@ const Navbar: React.FC = () => {
             
             {/* Mobile Contact Info */}
             <div className="border-t border-white/20 pt-4 mt-4 px-6 bg-gradient-to-r from-white/5 to-white/10 rounded-xl backdrop-blur-sm">
-              <p className="text-yellow-300 text-sm mb-3 font-bold">Need assistance?</p>
+              <p className="text-white text-sm mb-3 font-bold">Need assistance?</p>
               <div className="space-y-2">
-                <p className="text-yellow-200 text-sm font-medium">📞 (02) 8806-3000</p>
-                <p className="text-yellow-200 text-sm font-medium">📧 info@qcu.edu.ph</p>
+                <p className="text-blue-100 text-sm font-medium">📞 (02) 8806-3000</p>
+                <p className="text-blue-100 text-sm font-medium">📧 info@qcu.edu.ph</p>
               </div>
             </div>
           </div>

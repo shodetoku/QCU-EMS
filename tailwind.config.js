@@ -8,8 +8,8 @@ export default {
           primary: '#1444E1',
           secondary: '#374FA1',
           deep: '#394261',
-          bronze: '#E0AA14',
-          accent: '#95A1AD',
+          bronze: '#FFFFFF',
+          accent: '#FFFFFF',
           dark: '#0A0C10',
           gray: {
             900: '#0A0C10',

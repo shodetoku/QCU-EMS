@@ -23,10 +23,10 @@ const MissionVision: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Mission */}
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20 hover:bg-white/15 transition-all duration-300">
-            <div className="bg-qcu-bronze/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-              <Target className="h-10 w-10 text-qcu-bronze" />
+            <div className="bg-white/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+              <Target className="h-10 w-10 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-qcu-bronze mb-4 section-title">Our Mission</h3>
+            <h3 className="text-2xl font-bold text-white mb-4 section-title">Our Mission</h3>
             <p className="text-white leading-relaxed body-text">
               To provide a comprehensive education that enhances the lives of QCU students for nation-building and as world citizens.
             </p>
@@ -34,10 +34,10 @@ const MissionVision: React.FC = () => {
 
           {/* Vision */}
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20 hover:bg-white/15 transition-all duration-300">
-            <div className="bg-qcu-bronze/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-              <Eye className="h-10 w-10 text-qcu-bronze" />
+            <div className="bg-white/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+              <Eye className="h-10 w-10 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-qcu-bronze mb-4 section-title">Our Vision</h3>
+            <h3 className="text-2xl font-bold text-white mb-4 section-title">Our Vision</h3>
             <p className="text-white leading-relaxed body-text">
               To be recognized as the #1 local University of employable graduates.
 
@@ -47,25 +47,25 @@ const MissionVision: React.FC = () => {
 
           {/* Core Values */}
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20 hover:bg-white/15 transition-all duration-300">
-            <div className="bg-qcu-bronze/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-              <Heart className="h-10 w-10 text-qcu-bronze" />
+            <div className="bg-white/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+              <Heart className="h-10 w-10 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-qcu-bronze mb-4 section-title">Core Values</h3>
+            <h3 className="text-2xl font-bold text-white mb-4 section-title">Core Values</h3>
 <div className="text-white leading-relaxed body-text">
   <p className="mb-2">
-    <strong className="text-qcu-bronze">E</strong>mbrace the;
+    <strong className="text-white">E</strong>mbrace the;
   </p>
   <p className="mb-2">
-    <strong className="text-qcu-bronze">N</strong>ew Normal with;
+    <strong className="text-white">N</strong>ew Normal with;
   </p>
   <p className="mb-2">
-    <strong className="text-qcu-bronze">J</strong>ointness of Undertakings,
+    <strong className="text-white">J</strong>ointness of Undertakings,
   </p>
   <p className="mb-2">
-    <strong className="text-qcu-bronze">O</strong>rganizational Adaptability,
+    <strong className="text-white">O</strong>rganizational Adaptability,
   </p>
   <p>
-    <strong className="text-qcu-bronze">Y</strong>oke of Efficiency and Effectiveness
+    <strong className="text-white">Y</strong>oke of Efficiency and Effectiveness
   </p>
             </div>
           </div>

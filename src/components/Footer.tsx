@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
                   <a
                     key={label}
                     href={href}
-                    className="bg-white/10 hover:bg-yellow-500 text-white hover:text-qcu-dark p-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg backdrop-blur-sm"
+                    className="bg-white/10 hover:bg-gradient-to-br hover:from-qcu-primary hover:to-qcu-secondary text-white p-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg backdrop-blur-sm"
                     aria-label={label}
                   >
                     <Icon className="h-5 w-5" />
@@ -92,8 +92,8 @@ const Footer: React.FC = () => {
               </h4>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-yellow-500/20 p-3 rounded-full">
-                    <MapPin className="h-6 w-6 text-yellow-300" />
+                  <div className="bg-white/20 p-3 rounded-full">
+                    <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
                     <p className="text-white font-medium mb-1">Main Campus</p>
@@ -106,26 +106,26 @@ const Footer: React.FC = () => {
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="bg-yellow-500/20 p-3 rounded-full">
-                    <Phone className="h-6 w-6 text-yellow-300" />
+                  <div className="bg-white/20 p-3 rounded-full">
+                    <Phone className="h-6 w-6 text-white" />
                   </div>
                   <div>
                     <p className="text-white font-medium mb-1">Phone Numbers</p>
                     <div className="space-y-1">
-                      <p className="text-yellow-300 font-bold text-lg">(02) 8806-3000</p>
+                      <p className="text-white font-bold text-lg">(02) 8806-3000</p>
                       <p className="text-gray-300 text-sm">(02) 8951-4916</p>
                     </div>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="bg-yellow-500/20 p-3 rounded-full">
-                    <Mail className="h-6 w-6 text-yellow-300" />
+                  <div className="bg-white/20 p-3 rounded-full">
+                    <Mail className="h-6 w-6 text-white" />
                   </div>
                   <div>
                     <p className="text-white font-medium mb-1">Email Addresses</p>
                     <div className="space-y-1">
-                      <p className="text-yellow-300 font-bold">info@qcu.edu.ph</p>
+                      <p className="text-white font-bold">info@qcu.edu.ph</p>
                       <p className="text-gray-300 text-sm">admissions@qcu.edu.ph</p>
                     </div>
                   </div>
@@ -147,9 +147,9 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex flex-wrap gap-4">
                 {[
-                  { name: 'Admission Office', path: '/admin-login', color: 'from-blue-500 to-blue-600' },
-                  { name: 'Registrar', path: '/registrar-login', color: 'from-green-500 to-green-600' },
-                  { name: 'Department', path: '/department-login', color: 'from-purple-500 to-purple-600' }
+                  { name: 'Admission Office', path: '/admin-login', color: 'from-qcu-primary to-qcu-secondary' },
+                  { name: 'Registrar', path: '/registrar-login', color: 'from-blue-500 to-blue-600' },
+                  { name: 'Department', path: '/department-login', color: 'from-blue-600 to-blue-700' }
                 ].map((portal) => (
                   <Link
                     key={portal.name}

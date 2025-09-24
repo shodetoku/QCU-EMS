@@ -86,9 +86,9 @@ const CollegePrograms: React.FC = () => {
                       <img
                         src={college.logoPlaceholder}
                         alt={`${college.name} Logo`}
-                        className="w-16 h-16 rounded-full object-cover border-4 border-qcu-bronze"
+                        className="w-16 h-16 rounded-full object-cover border-4 border-white"
                       />
-                      <div className="absolute -bottom-2 -right-2 bg-qcu-secondary rounded-full p-2">
+                      <div className="absolute -bottom-2 -right-2 bg-gradient-to-br from-qcu-primary to-qcu-secondary rounded-full p-2">
                         <Icon className="h-5 w-5 text-white" />
                       </div>
                     </div>
@@ -108,7 +108,7 @@ const CollegePrograms: React.FC = () => {
                     <ul className="space-y-2">
                       {college.programs.map((program, index) => (
                         <li key={index} className="flex items-start">
-                          <GraduationCap className="h-5 w-5 text-qcu-bronze mr-3 mt-0.5 flex-shrink-0" />
+                          <GraduationCap className="h-5 w-5 text-qcu-primary mr-3 mt-0.5 flex-shrink-0" />
                           <span className="text-qcu-gray-700 readable-text">{program}</span>
                         </li>
                       ))}
@@ -116,7 +116,7 @@ const CollegePrograms: React.FC = () => {
                   </div>
 
                   <div className="mt-6 pt-6 border-t border-qcu-gray-200">
-                    <button className="text-qcu-secondary hover:text-qcu-bronze font-semibold readable-text inline-flex items-center gap-2 transition-colors">
+                    <button className="text-qcu-secondary hover:text-qcu-primary font-semibold readable-text inline-flex items-center gap-2 transition-colors">
                       <BookOpen className="h-4 w-4" />
                       Learn More About Programs
                     </button>
