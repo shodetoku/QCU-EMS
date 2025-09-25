@@ -50,7 +50,7 @@ const CampusesList: React.FC = () => {
     <section className="py-20 bg-qcu-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold section-title mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6" style={{ fontFamily: 'Cinzel, serif' }}>
             Our Campuses
           </h2>
           <p className="text-qcu-gray-600 text-xl max-w-3xl mx-auto body-text">
@@ -81,7 +81,7 @@ const CampusesList: React.FC = () => {
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-qcu-secondary section-title">
+                    <h3 className="text-xl font-bold text-gray-800" style={{ fontFamily: 'Cinzel, serif' }}>
                       {campus.name}
                     </h3>
                   </div>
@@ -94,26 +94,26 @@ const CampusesList: React.FC = () => {
                 <div className="space-y-3">
                   <div className="flex items-start">
                     <MapPin className="h-4 w-4 text-qcu-primary mr-2 mt-1 flex-shrink-0" />
-                    <span className="text-qcu-gray-700 text-sm readable-text">{campus.address}</span>
+                    <span className="text-gray-700 text-sm readable-text">{campus.address}</span>
                   </div>
 
                   {campus.phone && (
                     <div className="flex items-center">
                       <Phone className="h-4 w-4 text-qcu-primary mr-2 flex-shrink-0" />
-                      <span className="text-qcu-gray-700 text-sm readable-text">{campus.phone}</span>
+                      <span className="text-gray-700 text-sm readable-text">{campus.phone}</span>
                     </div>
                   )}
 
                   {campus.email && (
                     <div className="flex items-center">
                       <Mail className="h-4 w-4 text-qcu-primary mr-2 flex-shrink-0" />
-                      <span className="text-qcu-gray-700 text-sm readable-text">{campus.email}</span>
+                      <span className="text-gray-700 text-sm readable-text">{campus.email}</span>
                     </div>
                   )}
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-qcu-gray-200">
-                  <button className="text-qcu-secondary hover:text-qcu-primary font-semibold readable-text transition-colors">
+                  <button className="text-blue-600 hover:text-blue-800 font-semibold readable-text transition-colors">
                     Visit Campus →
                   </button>
                 </div>

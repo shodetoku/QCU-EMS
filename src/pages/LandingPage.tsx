@@ -50,7 +50,7 @@ const LandingPage: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold section-title mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-blue-700 mb-6" style={{ fontFamily: 'Cinzel, serif' }}>
               Why Choose QCU?
             </h2>
             <p className="text-qcu-gray-600 text-xl max-w-3xl mx-auto body-text">
@@ -63,7 +63,7 @@ const LandingPage: React.FC = () => {
               <div className="bg-qcu-primary/10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
                 <BookOpen className="h-10 w-10 text-qcu-primary" />
               </div>
-              <h3 className="text-2xl font-semibold section-title mb-4">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4" style={{ fontFamily: 'Cinzel, serif' }}>
                 Academic Excellence
               </h3>
               <p className="text-qcu-gray-600 leading-relaxed body-text">
@@ -72,11 +72,10 @@ const LandingPage: React.FC = () => {
             </div>
 
             <div className="text-center p-8 rounded-2xl bg-white border border-qcu-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div class="bg-qcu-primary bg-opacity-10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-
+              <div className="bg-qcu-bronze/10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
                 <Users className="h-10 w-10 text-qcu-bronze" />
               </div>
-              <h3 className="text-2xl font-semibold section-title mb-4">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4" style={{ fontFamily: 'Cinzel, serif' }}>
                 Vibrant Campus Life
               </h3>
               <p className="text-qcu-gray-600 leading-relaxed body-text">
@@ -88,7 +87,7 @@ const LandingPage: React.FC = () => {
               <div className="bg-qcu-secondary/10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
                 <Award className="h-10 w-10 text-qcu-secondary" />
               </div>
-              <h3 className="text-2xl font-semibold section-title mb-4">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4" style={{ fontFamily: 'Cinzel, serif' }}>
                 Career Success
               </h3>
               <p className="text-qcu-gray-600 leading-relaxed body-text">
@@ -160,7 +159,7 @@ const LandingPage: React.FC = () => {
               <h3 className="text-2xl font-semibold section-title mb-6">
                 Application Requirements
               </h3>
-              <ul className="space-y-3 text-qcu-gray-600 body-text">
+              <ul className="space-y-3 text-gray-700 body-text">
                 <li>• High School Diploma or equivalent</li>
                 <li>• Transcript of Records</li>
                 <li>• Birth Certificate (PSA Copy)</li>

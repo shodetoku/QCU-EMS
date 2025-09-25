@@ -12,7 +12,7 @@ const MissionVision: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold section-title mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'Cinzel, serif' }}>
             Our Foundation
           </h2>
           <p className="text-white text-xl max-w-3xl mx-auto body-text">
@@ -26,7 +26,7 @@ const MissionVision: React.FC = () => {
             <div className="bg-white/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
               <Target className="h-10 w-10 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-4 section-title">Our Mission</h3>
+            <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Cinzel, serif' }}>Our Mission</h3>
             <p className="text-white leading-relaxed body-text">
               To provide a comprehensive education that enhances the lives of QCU students for nation-building and as world citizens.
             </p>
@@ -37,11 +37,9 @@ const MissionVision: React.FC = () => {
             <div className="bg-white/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
               <Eye className="h-10 w-10 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-4 section-title">Our Vision</h3>
+            <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Cinzel, serif' }}>Our Vision</h3>
             <p className="text-white leading-relaxed body-text">
               To be recognized as the #1 local University of employable graduates.
-
-
             </p>
           </div>
 
@@ -50,7 +48,7 @@ const MissionVision: React.FC = () => {
             <div className="bg-white/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
               <Heart className="h-10 w-10 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-4 section-title">Core Values</h3>
+            <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Cinzel, serif' }}>Core Values</h3>
 <div className="text-white leading-relaxed body-text">
   <p className="mb-2">
     <strong className="text-white">E</strong>mbrace the;
