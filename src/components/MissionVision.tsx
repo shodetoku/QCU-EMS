@@ -4,7 +4,7 @@ import { Target, Eye, Heart } from 'lucide-react';
 const MissionVision: React.FC = () => {
   return (
 <section 
-  className="relative py-32 bg-cover bg-center bg-fixed"
+  className="relative py-16 md:py-24 lg:py-32 bg-cover bg-center bg-fixed min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh] flex items-center"
   style={{
     backgroundImage: `linear-gradient(rgba(55, 79, 161, 0.8), rgba(57, 66, 97, 0.8)), url('/qcu-banner2.png')`
   }}

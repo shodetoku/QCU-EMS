@@ -10,14 +10,14 @@ const LandingPage: React.FC = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section 
-  className="relative py-32 bg-cover bg-center bg-fixed"
+  className="relative py-16 md:py-20 lg:py-24 xl:py-28 min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] xl:min-h-screen bg-cover bg-center bg-fixed flex items-center"
   style={{
     backgroundImage: `linear-gradient(rgba(55, 79, 161, 0.8), rgba(57, 66, 97, 0.8)), url('/qcu-banner.png')`
   }}
 >
 
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-8 university-title">
               Welcome to Quezon City University
