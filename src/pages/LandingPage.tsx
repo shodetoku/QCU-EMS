@@ -72,8 +72,8 @@ const LandingPage: React.FC = () => {
             </div>
 
             <div className="text-center p-8 rounded-2xl bg-white border border-qcu-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="bg-qcu-bronze/10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                <Users className="h-10 w-10 text-qcu-bronze" />
+              <div className="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                <Users className="h-10 w-10 text-blue-700" />
               </div>
               <h3 className="text-2xl font-semibold text-gray-800 mb-4" style={{ fontFamily: 'Cinzel, serif' }}>
                 Vibrant Campus Life
@@ -109,7 +109,7 @@ const LandingPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold section-title mb-8">
+              <h2 className="text-4xl md:text-5xl font-bold text-blue-700 mb-8" style={{ fontFamily: 'Cinzel, serif' }}>
                 Admissions Guidelines
               </h2>
               <div className="space-y-6">
@@ -156,10 +156,10 @@ const LandingPage: React.FC = () => {
             </div>
             
             <div className="bg-qcu-primary/5 p-8 rounded-2xl border border-qcu-primary/20">
-              <h3 className="text-2xl font-semibold section-title mb-6">
+              <h3 className="text-2xl font-semibold text-blue-700 mb-6" style={{ fontFamily: 'Cinzel, serif' }}>
                 Application Requirements
               </h3>
-              <ul className="space-y-3 text-gray-700 body-text">
+              <ul className="space-y-3 text-gray-800 body-text">
                 <li>• High School Diploma or equivalent</li>
                 <li>• Transcript of Records</li>
                 <li>• Birth Certificate (PSA Copy)</li>
