@@ -64,11 +64,7 @@ const CollegePrograms: React.FC = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-<<<<<<< HEAD
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6" style={{ fontFamily: 'Cinzel, serif' }}>
-=======
           <h2 className="text-4xl md:text-5xl font-bold section-title mb-6">
->>>>>>> ae236366e79160b693a95f4ede441f1a540b09a1
             Our Colleges & Programs
           </h2>
           <p className="text-qcu-gray-600 text-xl max-w-3xl mx-auto body-text">
@@ -90,24 +86,14 @@ const CollegePrograms: React.FC = () => {
                       <img
                         src={college.logoPlaceholder}
                         alt={`${college.name} Logo`}
-<<<<<<< HEAD
-                        className="w-16 h-16 rounded-full object-cover border-4 border-white"
-                      />
-                      <div className="absolute -bottom-2 -right-2 bg-gradient-to-br from-qcu-primary to-qcu-secondary rounded-full p-2">
-=======
                         className="w-16 h-16 rounded-full object-cover border-4 border-qcu-bronze"
                       />
                       <div className="absolute -bottom-2 -right-2 bg-qcu-secondary rounded-full p-2">
->>>>>>> ae236366e79160b693a95f4ede441f1a540b09a1
                         <Icon className="h-5 w-5 text-white" />
                       </div>
                     </div>
                     <div className="ml-4">
-<<<<<<< HEAD
-                      <h3 className="text-xl font-bold text-gray-800" style={{ fontFamily: 'Cinzel, serif' }}>
-=======
                       <h3 className="text-xl font-bold text-qcu-secondary section-title">
->>>>>>> ae236366e79160b693a95f4ede441f1a540b09a1
                         {college.name}
                       </h3>
                     </div>
@@ -118,32 +104,19 @@ const CollegePrograms: React.FC = () => {
                   </p>
 
                   <div className="space-y-3">
-<<<<<<< HEAD
-                    <h4 className="font-semibold text-gray-800 readable-text">Programs Offered:</h4>
-                    <ul className="space-y-2">
-                      {college.programs.map((program, index) => (
-                        <li key={index} className="flex items-start">
-                          <GraduationCap className="h-5 w-5 text-qcu-primary mr-3 mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-700 readable-text">{program}</span>
-=======
                     <h4 className="font-semibold text-qcu-deep readable-text">Programs Offered:</h4>
                     <ul className="space-y-2">
                       {college.programs.map((program, index) => (
                         <li key={index} className="flex items-start">
                           <GraduationCap className="h-5 w-5 text-qcu-bronze mr-3 mt-0.5 flex-shrink-0" />
                           <span className="text-qcu-gray-700 readable-text">{program}</span>
->>>>>>> ae236366e79160b693a95f4ede441f1a540b09a1
                         </li>
                       ))}
                     </ul>
                   </div>
 
                   <div className="mt-6 pt-6 border-t border-qcu-gray-200">
-<<<<<<< HEAD
-                    <button className="text-blue-600 hover:text-blue-800 font-semibold readable-text inline-flex items-center gap-2 transition-colors">
-=======
                     <button className="text-qcu-secondary hover:text-qcu-bronze font-semibold readable-text inline-flex items-center gap-2 transition-colors">
->>>>>>> ae236366e79160b693a95f4ede441f1a540b09a1
                       <BookOpen className="h-4 w-4" />
                       Learn More About Programs
                     </button>
