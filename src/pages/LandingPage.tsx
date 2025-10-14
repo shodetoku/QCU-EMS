@@ -10,14 +10,14 @@ const LandingPage: React.FC = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section 
-  className="relative py-32 bg-cover bg-center bg-fixed"
+  className="relative py-16 md:py-20 lg:py-24 xl:py-28 min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] xl:min-h-screen bg-cover bg-center bg-fixed flex items-center"
   style={{
     backgroundImage: `linear-gradient(rgba(55, 79, 161, 0.8), rgba(57, 66, 97, 0.8)), url('/qcu-banner.png')`
   }}
 >
 
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-8 university-title">
               Welcome to Quezon City University
@@ -28,13 +28,13 @@ const LandingPage: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/apply"
-                className="bg-qcu-bronze hover:bg-yellow-500 text-qcu-dark px-8 py-4 rounded-2xl text-lg font-semibold inline-flex items-center justify-center gap-2 transition-colors shadow-lg readable-text"
+                className="bg-white hover:bg-blue-50 text-qcu-primary px-8 py-4 rounded-2xl text-lg font-semibold inline-flex items-center justify-center gap-2 transition-colors shadow-lg readable-text border-2 border-white"
               >
                 Apply Now <ArrowRight className="h-5 w-5" />
               </Link>
               <Link
                 to="/programs"
-                className="border-2 border-qcu-bronze hover:bg-qcu-bronze hover:text-qcu-dark text-qcu-bronze px-8 py-4 rounded-2xl text-lg font-semibold inline-flex items-center justify-center transition-colors readable-text"
+                className="border-2 border-white hover:bg-white hover:text-qcu-primary text-white px-8 py-4 rounded-2xl text-lg font-semibold inline-flex items-center justify-center transition-colors readable-text"
               >
                 View Programs
               </Link>
@@ -50,7 +50,7 @@ const LandingPage: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold section-title mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-blue-700 mb-6" style={{ fontFamily: 'Cinzel, serif' }}>
               Why Choose QCU?
             </h2>
             <p className="text-qcu-gray-600 text-xl max-w-3xl mx-auto body-text">
@@ -63,7 +63,7 @@ const LandingPage: React.FC = () => {
               <div className="bg-qcu-primary/10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
                 <BookOpen className="h-10 w-10 text-qcu-primary" />
               </div>
-              <h3 className="text-2xl font-semibold section-title mb-4">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4" style={{ fontFamily: 'Cinzel, serif' }}>
                 Academic Excellence
               </h3>
               <p className="text-qcu-gray-600 leading-relaxed body-text">
@@ -72,10 +72,10 @@ const LandingPage: React.FC = () => {
             </div>
 
             <div className="text-center p-8 rounded-2xl bg-white border border-qcu-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="bg-qcu-bronze/10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                <Users className="h-10 w-10 text-qcu-bronze" />
+              <div className="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                <Users className="h-10 w-10 text-blue-700" />
               </div>
-              <h3 className="text-2xl font-semibold section-title mb-4">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4" style={{ fontFamily: 'Cinzel, serif' }}>
                 Vibrant Campus Life
               </h3>
               <p className="text-qcu-gray-600 leading-relaxed body-text">
@@ -87,7 +87,7 @@ const LandingPage: React.FC = () => {
               <div className="bg-qcu-secondary/10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
                 <Award className="h-10 w-10 text-qcu-secondary" />
               </div>
-              <h3 className="text-2xl font-semibold section-title mb-4">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4" style={{ fontFamily: 'Cinzel, serif' }}>
                 Career Success
               </h3>
               <p className="text-qcu-gray-600 leading-relaxed body-text">
@@ -109,7 +109,7 @@ const LandingPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold section-title mb-8">
+              <h2 className="text-4xl md:text-5xl font-bold text-blue-700 mb-8" style={{ fontFamily: 'Cinzel, serif' }}>
                 Admissions Guidelines
               </h2>
               <div className="space-y-6">
@@ -156,10 +156,10 @@ const LandingPage: React.FC = () => {
             </div>
             
             <div className="bg-qcu-primary/5 p-8 rounded-2xl border border-qcu-primary/20">
-              <h3 className="text-2xl font-semibold section-title mb-6">
+              <h3 className="text-2xl font-semibold text-blue-700 mb-6" style={{ fontFamily: 'Cinzel, serif' }}>
                 Application Requirements
               </h3>
-              <ul className="space-y-3 text-qcu-gray-600 body-text">
+              <ul className="space-y-3 text-gray-800 body-text">
                 <li>• High School Diploma or equivalent</li>
                 <li>• Transcript of Records</li>
                 <li>• Birth Certificate (PSA Copy)</li>
@@ -171,7 +171,7 @@ const LandingPage: React.FC = () => {
               <div className="mt-6">
                 <Link
                   to="/apply"
-                  className="bg-qcu-bronze hover:bg-yellow-500 text-qcu-dark px-8 py-4 rounded-2xl font-semibold inline-flex items-center gap-2 transition-colors shadow-lg readable-text"
+                  className="bg-gradient-to-r from-qcu-primary to-qcu-secondary hover:from-blue-600 hover:to-blue-700 text-white px-8 py-4 rounded-2xl font-semibold inline-flex items-center gap-2 transition-colors shadow-lg readable-text"
                 >
                   Start Application <ArrowRight className="h-4 w-4" />
                 </Link>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, User, LogIn } from 'lucide-react';
+import { Menu, X, ChevronDown, User, LogIn, GraduationCap } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const location = useLocation();
@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -35,81 +35,90 @@ const Navbar: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'bg-qcu-secondary/95 backdrop-blur-md shadow-lg' 
-        : 'bg-qcu-secondary shadow-md'
+        ? 'bg-gradient-to-r from-qcu-dark via-qcu-secondary to-qcu-deep shadow-2xl backdrop-blur-lg' 
+        : 'bg-gradient-to-r from-qcu-secondary via-qcu-deep to-qcu-dark shadow-xl'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex justify-between items-center h-24">
           {/* Logo Section */}
           <Link 
             to="/" 
-            className="flex items-center space-x-3 group transition-transform duration-200 hover:scale-105"
+            className="flex items-center space-x-4 group transition-all duration-300 hover:scale-105"
           >
             <div className="relative">
               <img 
                 src="/qcu-logo.png" 
                 alt="QCU Logo" 
-                className="h-14 w-14 object-contain transition-transform duration-200 group-hover:rotate-3"
+                className="h-16 w-16 object-contain transition-all duration-300 group-hover:rotate-6 drop-shadow-lg"
               />
-              <div className="absolute inset-0 bg-qcu-bronze/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 blur-sm"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-orange-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
             </div>
             <div className="hidden sm:block">
-              <span className="text-xl font-bold university-title text-white group-hover:text-qcu-bronze transition-colors duration-200">
+              <div className="text-2xl font-bold text-white group-hover:text-yellow-300 transition-colors duration-300" style={{ fontFamily: 'Cinzel, serif' }}>
                 Quezon City University
-              </span>
-              <div className="text-xs text-qcu-accent opacity-90">
+              </div>
+              <div className="text-sm text-yellow-300 opacity-90 font-medium tracking-wide">
                 Excellence in Education Since 1994
               </div>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-2">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
                 className={`${
                   item.isButton
-                    ? 'bg-qcu-bronze hover:bg-qcu-bronze/90 text-qcu-dark px-6 py-2.5 rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200'
+                    ? 'bg-gradient-to-r from-white to-blue-50 hover:from-blue-50 hover:to-white text-qcu-primary px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border-2 border-white'
                     : isActive(item.path)
-                    ? 'text-qcu-bronze font-semibold px-4 py-2 rounded-lg bg-qcu-bronze/10 border-b-2 border-qcu-bronze'
-                    : 'text-white hover:text-qcu-bronze px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-200'
-                } relative group`}
+                    ? 'text-white font-bold px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/50 shadow-lg'
+                    : 'text-white hover:text-blue-100 px-6 py-3 rounded-full hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-300 font-medium'
+                } relative group text-lg`}
               >
                 {item.name}
                 {!item.isButton && (
-                  <span className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-qcu-bronze transition-all duration-200 ${
-                    isActive(item.path) ? 'w-full' : 'group-hover:w-full'
+                  <span className={`absolute bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full transition-all duration-300 ${
+                    isActive(item.path) ? 'w-8' : 'group-hover:w-8'
                   }`}></span>
                 )}
               </Link>
             ))}
             
             {/* Student Portal Dropdown */}
-            <div className="relative group">
-              <button className="flex items-center text-white hover:text-qcu-bronze px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-200">
-                <User className="h-4 w-4 mr-2" />
+            <div className="relative group ml-4">
+              <button className="flex items-center text-white hover:text-blue-100 px-6 py-3 rounded-full hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-300 font-medium text-lg">
+                <User className="h-5 w-5 mr-2" />
                 Student Portal
-                <ChevronDown className="h-4 w-4 ml-1 transform group-hover:rotate-180 transition-transform duration-200" />
+                <ChevronDown className="h-5 w-5 ml-2 transform group-hover:rotate-180 transition-transform duration-300" />
               </button>
               
               {/* Dropdown Menu */}
-              <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transform translate-y-2 group-hover:translate-y-0 transition-all duration-200 border border-gray-100">
-                <div className="py-2">
+              <div className="absolute right-0 mt-3 w-64 bg-white rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 border border-gray-100 overflow-hidden">
+                <div className="bg-gradient-to-r from-qcu-primary to-qcu-secondary p-4">
+                  <div className="flex items-center text-white">
+                    <GraduationCap className="h-6 w-6 mr-2" />
+                    <span className="font-bold text-lg">Student Access</span>
+                  </div>
+                </div>
+                <div className="p-2">
                   <Link
                     to="/dashboard-login"
-                    className="flex items-center px-4 py-3 text-gray-700 hover:bg-qcu-primary/5 hover:text-qcu-primary transition-colors duration-150"
+                    className="flex items-center px-4 py-4 text-gray-700 hover:bg-gradient-to-r hover:from-qcu-primary/10 hover:to-qcu-secondary/10 hover:text-qcu-primary transition-all duration-200 rounded-xl font-medium"
                   >
-                    <LogIn className="h-4 w-4 mr-3" />
+                    <LogIn className="h-5 w-5 mr-3" />
                     Login to Dashboard
                   </Link>
-                  <div className="border-t border-gray-100 my-1"></div>
-                  <div className="px-4 py-2">
-                    <p className="text-xs text-gray-500 mb-2">Need help?</p>
-                    <p className="text-xs text-qcu-primary font-medium">📞 (02) 8806-3000</p>
+                  <div className="border-t border-gray-100 my-2"></div>
+                  <div className="px-4 py-3 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl">
+                    <p className="text-xs text-gray-600 mb-2 font-medium">Need assistance?</p>
+                    <div className="space-y-1">
+                      <p className="text-sm text-qcu-primary font-bold">📞 (02) 8806-3000</p>
+                      <p className="text-sm text-qcu-primary font-bold">📧 info@qcu.edu.ph</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -123,14 +132,14 @@ const Navbar: React.FC = () => {
                 e.stopPropagation();
                 setIsMenuOpen(!isMenuOpen);
               }}
-              className="text-white hover:text-qcu-bronze p-2 rounded-lg hover:bg-white/10 transition-all duration-200"
+              className="text-white hover:text-yellow-300 p-3 rounded-full hover:bg-white/10 transition-all duration-300"
               aria-label="Toggle menu"
             >
               <div className="relative w-6 h-6">
-                <Menu className={`absolute inset-0 transform transition-all duration-200 ${
+                <Menu className={`absolute inset-0 transform transition-all duration-300 ${
                   isMenuOpen ? 'rotate-90 opacity-0' : 'rotate-0 opacity-100'
                 }`} />
-                <X className={`absolute inset-0 transform transition-all duration-200 ${
+                <X className={`absolute inset-0 transform transition-all duration-300 ${
                   isMenuOpen ? 'rotate-0 opacity-100' : '-rotate-90 opacity-0'
                 }`} />
               </div>
@@ -139,25 +148,25 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        <div className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+          isMenuOpen ? 'max-h-screen opacity-100 pb-6' : 'max-h-0 opacity-0'
         }`}>
-          <div className="px-2 pt-2 pb-6 space-y-2 bg-qcu-secondary/95 backdrop-blur-md border-t border-qcu-primary/20">
+          <div className="px-4 pt-4 space-y-3 bg-gradient-to-b from-transparent to-black/20 backdrop-blur-sm rounded-2xl border border-white/10">
             {navItems.map((item, index) => (
               <Link
                 key={item.name}
                 to={item.path}
                 className={`${
                   item.isButton
-                    ? 'bg-qcu-bronze hover:bg-qcu-bronze/90 text-qcu-dark font-semibold shadow-lg'
+                    ? 'bg-gradient-to-r from-white to-blue-50 hover:from-blue-50 hover:to-white text-qcu-primary font-bold shadow-lg text-center'
                     : isActive(item.path)
-                    ? 'text-qcu-bronze font-semibold bg-qcu-bronze/10 border-l-4 border-qcu-bronze'
-                    : 'text-white hover:text-qcu-bronze hover:bg-white/10'
-                } block px-4 py-3 rounded-lg text-base transition-all duration-200 transform hover:translate-x-1`}
+                    ? 'text-white font-bold bg-white/10 backdrop-blur-sm border-l-4 border-white'
+                    : 'text-white hover:text-blue-100 hover:bg-white/10 hover:backdrop-blur-sm'
+                } block px-6 py-4 rounded-xl text-lg transition-all duration-300 transform hover:translate-x-2`}
                 onClick={() => setIsMenuOpen(false)}
                 style={{ 
-                  animationDelay: `${index * 50}ms`,
-                  animation: isMenuOpen ? 'slideInLeft 0.3s ease-out forwards' : 'none'
+                  animationDelay: `${index * 100}ms`,
+                  animation: isMenuOpen ? 'slideInLeft 0.4s ease-out forwards' : 'none'
                 }}
               >
                 {item.name}
@@ -165,23 +174,23 @@ const Navbar: React.FC = () => {
             ))}
             
             {/* Mobile Student Portal */}
-            <div className="border-t border-qcu-primary/20 pt-4 mt-4">
+            <div className="border-t border-white/20 pt-4 mt-4">
               <Link
                 to="/dashboard-login"
-                className="flex items-center text-white hover:text-qcu-bronze hover:bg-white/10 px-4 py-3 rounded-lg text-base transition-all duration-200 transform hover:translate-x-1"
+                className="flex items-center text-white hover:text-blue-100 hover:bg-white/10 hover:backdrop-blur-sm px-6 py-4 rounded-xl text-lg transition-all duration-300 transform hover:translate-x-2 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                <User className="h-5 w-5 mr-3" />
+                <User className="h-6 w-6 mr-3" />
                 Student Portal
               </Link>
             </div>
             
             {/* Mobile Contact Info */}
-            <div className="border-t border-qcu-primary/20 pt-4 mt-4 px-4">
-              <p className="text-qcu-accent text-sm mb-2">Need assistance?</p>
-              <div className="space-y-1">
-                <p className="text-qcu-bronze text-sm font-medium">📞 (02) 8806-3000</p>
-                <p className="text-qcu-bronze text-sm font-medium">📧 info@qcu.edu.ph</p>
+            <div className="border-t border-white/20 pt-4 mt-4 px-6 bg-gradient-to-r from-white/5 to-white/10 rounded-xl backdrop-blur-sm">
+              <p className="text-white text-sm mb-3 font-bold">Need assistance?</p>
+              <div className="space-y-2">
+                <p className="text-blue-100 text-sm font-medium">📞 (02) 8806-3000</p>
+                <p className="text-blue-100 text-sm font-medium">📧 info@qcu.edu.ph</p>
               </div>
             </div>
           </div>
@@ -193,7 +202,7 @@ const Navbar: React.FC = () => {
         @keyframes slideInLeft {
           from {
             opacity: 0;
-            transform: translateX(-20px);
+            transform: translateX(-30px);
           }
           to {
             opacity: 1;

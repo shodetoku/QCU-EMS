@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 @layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+  
   body {
     font-family: 'Merriweather', 'Inter', system-ui, sans-serif;
   }
@@ -45,5 +45,30 @@
   
   .readable-text {
     font-family: 'Inter', sans-serif;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #1444E1, #374FA1);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #374FA1, #394261);
+  }
+  
+  /* Smooth transitions for all interactive elements */
+  * {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
   }
 }
