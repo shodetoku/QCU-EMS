@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  body {
+    font-family: 'Merriweather', 'Inter', system-ui, sans-serif;
+  }
+  
+  h1 {
+    @apply text-4xl font-bold text-qcu-deep;
+    font-family: 'Cinzel', serif;
+  }
+  
+  h2 {
+    @apply text-3xl font-semibold text-qcu-deep;
+    font-family: 'Cinzel', serif;
+  }
+  
+  h3 {
+    @apply text-2xl font-semibold text-qcu-primary;
+    font-family: 'Cinzel', serif;
+  }
+  
+  h4 {
+    @apply text-xl font-medium text-qcu-deep;
+    font-family: 'Cinzel', serif;
+  }
+  
+  .university-title {
+    font-family: 'Cinzel', serif;
+    color: #ffffff;
+  }
+  
+  .section-title {
+    font-family: 'Cinzel', serif;
+    color: #ffffff;
+  }
+  
+  .body-text {
+    font-family: 'Merriweather', serif;
+  }
+  
+  .readable-text {
+    font-family: 'Inter', sans-serif;
+  }
+}

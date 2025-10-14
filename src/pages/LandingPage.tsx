@@ -1,0 +1,237 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { BookOpen, Users, Award, MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
+import MissionVision from '../components/MissionVision';
+import CollegePrograms from '../components/CollegePrograms';
+import CampusesList from '../components/CampusesList';
+
+const LandingPage: React.FC = () => {
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section 
+  className="relative py-32 bg-cover bg-center bg-fixed"
+  style={{
+    backgroundImage: `linear-gradient(rgba(55, 79, 161, 0.8), rgba(57, 66, 97, 0.8)), url('/qcu-banner.png')`
+  }}
+>
+
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 university-title">
+              Welcome to Quezon City University
+            </h1>
+            <p className="text-xl md:text-2xl mb-12 text-white max-w-4xl mx-auto body-text">
+              Shaping Tomorrow's Leaders Through Excellence in Education
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/apply"
+                className="bg-qcu-bronze hover:bg-yellow-500 text-qcu-dark px-8 py-4 rounded-2xl text-lg font-semibold inline-flex items-center justify-center gap-2 transition-colors shadow-lg readable-text"
+              >
+                Apply Now <ArrowRight className="h-5 w-5" />
+              </Link>
+              <Link
+                to="/programs"
+                className="border-2 border-qcu-bronze hover:bg-qcu-bronze hover:text-qcu-dark text-qcu-bronze px-8 py-4 rounded-2xl text-lg font-semibold inline-flex items-center justify-center transition-colors readable-text"
+              >
+                View Programs
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission, Vision, Core Values */}
+      <MissionVision />
+
+      {/* Features Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold section-title mb-6">
+              Why Choose QCU?
+            </h2>
+            <p className="text-qcu-gray-600 text-xl max-w-3xl mx-auto body-text">
+              Discover what makes Quezon City University the perfect choice for your academic journey.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center p-8 rounded-2xl bg-white border border-qcu-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="bg-qcu-primary/10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                <BookOpen className="h-10 w-10 text-qcu-primary" />
+              </div>
+              <h3 className="text-2xl font-semibold section-title mb-4">
+                Academic Excellence
+              </h3>
+              <p className="text-qcu-gray-600 leading-relaxed body-text">
+                Comprehensive programs designed to meet industry standards with experienced faculty members.
+              </p>
+            </div>
+
+            <div className="text-center p-8 rounded-2xl bg-white border border-qcu-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="bg-qcu-bronze/10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                <Users className="h-10 w-10 text-qcu-bronze" />
+              </div>
+              <h3 className="text-2xl font-semibold section-title mb-4">
+                Vibrant Campus Life
+              </h3>
+              <p className="text-qcu-gray-600 leading-relaxed body-text">
+                Active student organizations, sports programs, and cultural activities for holistic development.
+              </p>
+            </div>
+
+            <div className="text-center p-8 rounded-2xl bg-white border border-qcu-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="bg-qcu-secondary/10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                <Award className="h-10 w-10 text-qcu-secondary" />
+              </div>
+              <h3 className="text-2xl font-semibold section-title mb-4">
+                Career Success
+              </h3>
+              <p className="text-qcu-gray-600 leading-relaxed body-text">
+                Strong industry partnerships and career services to ensure successful job placement.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Colleges & Programs */}
+      <CollegePrograms />
+
+      {/* Campuses */}
+      <CampusesList />
+
+      {/* Admissions Guidelines */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold section-title mb-8">
+                Admissions Guidelines
+              </h2>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="bg-qcu-primary rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-white font-bold text-sm">1</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-qcu-deep mb-2 text-lg readable-text">Submit Online Application</h3>
+                    <p className="text-qcu-gray-600 body-text">Complete the online application form with required documents.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="bg-qcu-primary rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-white font-bold text-sm">2</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-qcu-deep mb-2 text-lg readable-text">Take Entrance Examination</h3>
+                    <p className="text-qcu-gray-600 body-text">Attend the scheduled entrance exam at the designated venue.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="bg-qcu-primary rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-white font-bold text-sm">3</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-qcu-deep mb-2 text-lg readable-text">Wait for Results</h3>
+                    <p className="text-qcu-gray-600 body-text">Results will be available through your student dashboard.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="bg-qcu-primary rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-white font-bold text-sm">4</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-qcu-deep mb-2 text-lg readable-text">Complete Enrollment</h3>
+                    <p className="text-qcu-gray-600 body-text">Submit final requirements and complete your enrollment process.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-qcu-primary/5 p-8 rounded-2xl border border-qcu-primary/20">
+              <h3 className="text-2xl font-semibold section-title mb-6">
+                Application Requirements
+              </h3>
+              <ul className="space-y-3 text-qcu-gray-600 body-text">
+                <li>• High School Diploma or equivalent</li>
+                <li>• Transcript of Records</li>
+                <li>• Birth Certificate (PSA Copy)</li>
+                <li>• 2x2 ID Pictures (4 copies)</li>
+                <li>• Medical Certificate</li>
+                <li>• Certificate of Good Moral Character</li>
+              </ul>
+              
+              <div className="mt-6">
+                <Link
+                  to="/apply"
+                  className="bg-qcu-bronze hover:bg-yellow-500 text-qcu-dark px-8 py-4 rounded-2xl font-semibold inline-flex items-center gap-2 transition-colors shadow-lg readable-text"
+                >
+                  Start Application <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 bg-qcu-secondary text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 section-title">
+              Contact Information
+            </h2>
+            <p className="text-qcu-accent text-xl body-text">
+              Get in touch with us for any inquiries about admissions and programs.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="bg-qcu-bronze rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                <MapPin className="h-10 w-10 text-qcu-dark" />
+              </div>
+              <h3 className="text-2xl font-semibold mb-4 section-title">Address</h3>
+              <p className="text-qcu-accent leading-relaxed body-text">
+                673 Quirino Highway<br />
+                San Bartolome, Novaliches<br />
+                Quezon City, Philippines
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="bg-qcu-bronze rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                <Phone className="h-10 w-10 text-qcu-dark" />
+              </div>
+              <h3 className="text-2xl font-semibold mb-4 section-title">Phone</h3>
+              <p className="text-qcu-accent leading-relaxed body-text">
+                (02) 8806-3000<br />
+                (02) 8951-4916
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="bg-qcu-bronze rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                <Mail className="h-10 w-10 text-qcu-dark" />
+              </div>
+              <h3 className="text-2xl font-semibold mb-4 section-title">Email</h3>
+              <p className="text-qcu-accent leading-relaxed body-text">
+                admissions@qcu.edu.ph<br />
+                info@qcu.edu.ph
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default LandingPage;
