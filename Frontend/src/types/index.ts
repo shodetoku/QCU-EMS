@@ -9,24 +9,27 @@ export interface Applicant {
     gender: string;
     civilStatus: string;
     nationality: string;
+    religion?: string;
   };
   contactInfo: {
     email: string;
     phone: string;
-    address: string;
-    city: string;
-    province: string;
-    zipCode: string;
+    address: {
+      street: string;
+      city: string;
+      province: string;
+      zipCode: string;
+    };
   };
   academicInfo: {
     program: string;
     lastSchoolAttended: string;
     yearGraduated: string;
-    gwa?: string;
+    gpa?: number;
   };
   status: 'pending' | 'approved' | 'denied' | 'enrolled';
   examStatus: 'pending' | 'scheduled' | 'passed' | 'failed';
-  documentsUploaded: boolean;
+  documentsUploaded?: boolean;
   studentId?: string;
   submissionDate: string;
 }
@@ -37,7 +40,9 @@ export interface ExamSchedule {
   date: string;
   time: string;
   venue: string;
-  instructions: string[];
+  instructions?: string[];
+  capacity?: number;
+  registered?: number;
 }
 
 export interface Program {
@@ -47,4 +52,5 @@ export interface Program {
   description: string;
   duration: string;
   requirements: string[];
+  department?: string;
 }
