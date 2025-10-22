@@ -19,7 +19,7 @@ const LandingPage: React.FC = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 university-title">
+            <h1 className="text-5xl md:text-7xl text-white font-bold mb-8 university-title">
               Welcome to Quezon City University
             </h1>
             <p className="text-xl md:text-2xl mb-12 text-white max-w-4xl mx-auto body-text">

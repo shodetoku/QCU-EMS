@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LogOut, Bell, User, FileText, Calendar } from 'lucide-react';
-
 type TabType = 'profile' | 'pre-enlistment' | 'schedule';
 
 const StudentPortal: React.FC = () => {
   const navigate = useNavigate();
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
   const [activeTab, setActiveTab] = useState<TabType>('profile');
   const [preEnlistmentStep, setPreEnlistmentStep] = useState<'form' | 'review' | 'submitted'>('form');
   const [formData, setFormData] = useState({
@@ -51,10 +51,16 @@ const StudentPortal: React.FC = () => {
     }
   }, [navigate]);
 
-  const handleLogout = () => {
+
+
+ // eslint-disable-next-line @typescript-eslint/no-unused-vars
+const handleLogout = () => setShowLogoutModal(true);
+
+  const confirmLogout = () => {
     localStorage.removeItem('loggedInUser');
     navigate('/login');
   };
+  const cancelLogout = () => setShowLogoutModal(false);
 
   const handleNotifications = () => {
     // This is where you would typically show a notification modal or navigate
@@ -262,16 +268,45 @@ const StudentPortal: React.FC = () => {
               </p>
             </div>
           </div>
-          <div className="flex items-center gap-4">
-            <span className="text-gray-700 text-sm">Welcome</span>
-            <button
-              onClick={handleLogout}
-              className="flex items-center text-gray-700 hover:text-gray-900"
-            >
-              <LogOut className="h-5 w-5 mr-1" />
-              <span className="text-sm">Log Out</span>
-            </button>
-          </div>
+            {/* ===== Log Out Button ===== */}
+  <div className="flex items-center gap-4">
+      <span className="text-sm">Welcome!</span>
+    <button
+      onClick={handleLogout}
+        className="flex items-center gap-2 bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+    >
+      <LogOut className="h-5 w-5 mr-1" />
+      <span className="text-sm">Log Out</span>
+    </button>
+  </div>
+
+         {/* ===== Logout Confirmation Modal ===== */}
+{showLogoutModal && (
+  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center">
+      <h2 className="text-lg font-semibold mb-4">Confirm Logout</h2>
+      <p className="text-gray-600 mb-6">Are you sure you want to log out?</p>
+      <div className="flex justify-center gap-4">
+        <button
+          onClick={confirmLogout}
+          className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-8q00 transition"
+        >
+          Log Out
+        </button>
+        <button
+          onClick={cancelLogout}
+          className="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 transition"
+        >
+          Cancel
+        </button>
+        
+      </div>
+    </div>
+  </div>
+)} 
+
+
+
         </div>
       </div>
 
