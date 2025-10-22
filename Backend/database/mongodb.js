@@ -13,7 +13,10 @@ export const connectToDatabaseLibrary = async() => {
     }
 
     if(!libraryConnection) {
-        libraryConnection = mongoose.createConnection(LIBRARY_DB_URI)
+        libraryConnection = mongoose.createConnection(LIBRARY_DB_URI, {
+            tls: true,
+            tlsAllowInvalidCertificates: true,
+        })
         libraryConnection.on('connected', () => {
             console.log('Connected to Library Database')
         })
@@ -32,7 +35,10 @@ export const connectToDatabaseEnrollment = async() => {
     }
 
     if(!enrollmentConnection) {
-        enrollmentConnection = mongoose.createConnection(ENROLLMENT_DB_URI)
+        enrollmentConnection = mongoose.createConnection(ENROLLMENT_DB_URI, {
+            tls: true,
+            tlsAllowInvalidCertificates: true,
+        })
         enrollmentConnection.on('connected', () => {
             console.log('Connected to Enrollment Database')
         })
@@ -51,7 +57,10 @@ export const connectToDatabaseLearning = async() => {
     }
 
     if(!learningConnection) {
-        learningConnection = mongoose.createConnection(LEARNING_DB_URI)
+        learningConnection = mongoose.createConnection(LEARNING_DB_URI, {
+            tls: true,
+            tlsAllowInvalidCertificates: true,
+        })
         learningConnection.on('connected', () => {
             console.log('Connected to Learning Management Database')
         })
@@ -70,7 +79,10 @@ export const connectToDatabaseServices = async() => {
     }
 
     if(!servicesConnection) {
-        servicesConnection = mongoose.createConnection(SERVICES_DB_URI)
+        servicesConnection = mongoose.createConnection(SERVICES_DB_URI, {
+            tls: true,
+            tlsAllowInvalidCertificates: true,
+        })
         servicesConnection.on('connected', () => {
             console.log('Connected to School Services Database')
         })
