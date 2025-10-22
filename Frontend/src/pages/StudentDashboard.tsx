@@ -350,8 +350,7 @@ const StudentDashboard: React.FC = () => {
                         <Bell className="h-5 w-5 text-blue-600 mr-2" />
                         <h3 className="font-semibold text-gray-900">
                           Application Status Update <span className="text-red-500">•</span>
-                 
-       </h3>
+                        </h3>
                       </div>
                       <p className="text-sm text-gray-600 mb-2">
                         Your application has been approved and processed successfully.
@@ -400,15 +399,16 @@ const StudentDashboard: React.FC = () => {
         </div>
       </div>
       
-    {/* 7. CONDITIONAL MODAL RENDERING */}
-    {showLogoutModal && (
-        <LogoutConfirmationModal
-            onConfirm={handleConfirmLogout}
-            onCancel={handleCancelLogout}
-        />
-    )}
-  </div>
-  );
+    // ... (rest of your component JSX)
+{/* 7. CONDITIONAL MODAL RENDERING - REPLACE TEST BLOCK WITH MODAL COMPONENT */}
+{showLogoutModal && (
+  <LogoutConfirmationModal
+  onConfirm={handleConfirmLogout}
+  onCancel={handleCancelLogout}
+  />
+)}
+  </div>
+  );
 };
 
 export default StudentDashboard;
