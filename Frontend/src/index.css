@@ -2,12 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 
-/* stylelint-disable at-rule-no-unknown */
-/* Allow Tailwind directives to be processed by PostCSS/Tailwind */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-/* stylelint-enable at-rule-no-unknown */
+/* Allow Tailwind directives to be processed by PostCSS/Tailwind (use @import form to avoid unknown at-rules in some editors) */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 
 /* Custom base styles */
@@ -23,6 +21,11 @@
 /* Optional custom component */
 @layer components {
   .btn-qcu {
-    @apply px-4 py-2 rounded-md font-medium;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
   }
 }
