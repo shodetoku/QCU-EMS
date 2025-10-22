@@ -1,74 +1,24 @@
+/* Fonts must come first */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Tailwind directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Custom base styles */
 @layer base {
-  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;500;600;700;800&family=Quattrocento:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
-  
   body {
     font-family: 'Merriweather', 'Inter', system-ui, sans-serif;
   }
-  
   h1 {
-    @apply text-4xl font-bold text-qcu-deep;
     font-family: 'Cinzel', serif;
   }
-  
-  h2 {
-    @apply text-3xl font-semibold text-qcu-deep;
-    font-family: 'Cinzel', serif;
-  }
-  
-  h3 {
-    @apply text-2xl font-semibold text-qcu-primary;
-    font-family: 'Cinzel', serif;
-  }
-  
-  h4 {
-    @apply text-xl font-medium text-qcu-deep;
-    font-family: 'Cinzel', serif;
-  }
-  
-  .university-title {
-    font-family: 'Cinzel', serif;
-    color: #ffffff;
-  }
-  
-  .section-title {
-    font-family: 'Cinzel', serif;
-    color: #ffffff;
-  }
-  
-  .body-text {
-    font-family: 'Merriweather', serif;
-  }
-  
-  .readable-text {
-    font-family: 'Inter', sans-serif;
-  }
-  
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #1444E1, #374FA1);
-    border-radius: 4px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, #374FA1, #394261);
-  }
-  
-  /* Smooth transitions for all interactive elements */
-  * {
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
+}
+
+/* Optional custom component */
+@layer components {
+  .btn-qcu {
+    @apply px-4 py-2 rounded-md font-medium;
   }
 }
