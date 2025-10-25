@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LogIn, User, Lock, Mail } from 'lucide-react';
+import { LogIn, User, Lock, Mail, Eye, EyeOff } from 'lucide-react';
+
 
 const UnifiedLogin: React.FC = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ userId: '', password: '' });
   const [error, setError] = useState('');
   const [showResetModal, setShowResetModal] = useState(false);
-  const [resetStep, setResetStep] = useState(1); // 1 = email, 2 = code, 3 = new password
+  const [resetStep, setResetStep] = useState(1);
   const [resetEmail, setResetEmail] = useState('');
   const [resetCode, setResetCode] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -147,11 +150,26 @@ const UnifiedLogin: React.FC = () => {
 
             <div className="mb-6">
               <label className="block text-sm font-medium text-gray-700 mb-2">Password</label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-                <input type="password" name="password" value={formData.password} onChange={handleChange} placeholder="Enter your Password"
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required />
-              </div>
+             <div className="relative">
+  <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+  <input
+    type={showPassword ? "text" : "password"}
+    name="password"
+    value={formData.password}
+    onChange={handleChange}
+    placeholder="Enter your Password"
+    className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+    required
+  />
+  <button
+    type="button"
+    onClick={() => setShowPassword(!showPassword)}
+    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+  >
+    {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+  </button>
+</div>
+
             </div>
 
             <button type="submit" className="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold transition-colors">Login</button>
@@ -197,7 +215,12 @@ const UnifiedLogin: React.FC = () => {
                 <p className="text-gray-600 mb-4 text-sm">A 4-digit code has been sent to <strong>{resetEmail}</strong></p>
                 <div className="flex justify-center gap-3 mb-6">
                   {[0, 1, 2, 3].map((i) => (
-                    <input key={i} type="text" maxLength={1} value={resetCode[i] || ''} id={`code-${i}`}
+                    <input
+                      key={i}
+                      type="text"
+                      maxLength={1}
+                      value={resetCode[i] || ''}
+                      id={`code-${i}`}
                       onChange={(e) => {
                         const val = e.target.value.replace(/[^0-9]/g, '');
                         const newCode = resetCode.split('');
@@ -205,45 +228,89 @@ const UnifiedLogin: React.FC = () => {
                         setResetCode(newCode.join(''));
                         if (val && i < 3) document.getElementById(`code-${i + 1}`)?.focus();
                       }}
-                      onKeyDown={(e) => { if (e.key === 'Backspace' && !resetCode[i] && i > 0) document.getElementById(`code-${i - 1}`)?.focus(); }}
-                      className="w-12 h-12 text-center text-lg font-semibold border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+                      onKeyDown={(e) => {
+                        if (e.key === 'Backspace' && !resetCode[i] && i > 0)
+                          document.getElementById(`code-${i - 1}`)?.focus();
+                      }}
+                      className="w-12 h-12 text-center text-lg font-semibold border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
                   ))}
                 </div>
-                <button onClick={() => { if (resetCode.length === 4) setResetStep(3); else alert('Please enter the 4-digit code.'); }}
-                  className="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">Next</button>
-                <button onClick={closeResetModal} className="mt-3 text-sm text-gray-500 hover:text-gray-700">Cancel</button>
+                <button
+                  onClick={() => {
+                    if (resetCode.length === 4) setResetStep(3);
+                    else alert('Please enter the 4-digit code.');
+                  }}
+                  className="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+                >
+                  Next
+                </button>
+                <button onClick={closeResetModal} className="mt-3 text-sm text-gray-500 hover:text-gray-700">
+                  Cancel
+                </button>
               </>
             )}
 
             {/* Step 3: New Password */}
-            {resetStep === 3 && (
-              <>
-                <h2 className="text-xl font-semibold mb-2 text-gray-800">Set new password</h2>
-                <div className="space-y-3 mb-4 text-left">
-                  <label className="text-sm font-medium text-gray-700">New password</label>
-                  <div className="relative">
-                    <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-                    <input type={showNewPassword ? 'text' : 'password'} placeholder="Enter new password" value={newPassword}
-                      onChange={(e) => setNewPassword(e.target.value)}
-                      className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
-                    <button type="button" className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
-                      onClick={() => setShowNewPassword(!showNewPassword)}>{showNewPassword ? 'Hide' : 'Show'}</button>
-                  </div>
+{resetStep === 3 && (
+  <>
+    <h2 className="text-xl font-semibold mb-2 text-gray-800">Set new password</h2>
+    <div className="space-y-3 mb-4 text-left">
+      {/* New Password */}
+      <label className="text-sm font-medium text-gray-700">New password</label>
+      <div className="relative">
+        <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+        <input
+          type={showNewPassword ? 'text' : 'password'}
+          placeholder="Enter new password"
+          value={newPassword}
+          onChange={(e) => setNewPassword(e.target.value)}
+          className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        />
+        <button
+          type="button"
+          className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+          onClick={() => setShowNewPassword(!showNewPassword)}
+        >
+          {showNewPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+        </button>
+      </div>
 
-                  <label className="text-sm font-medium text-gray-700">Confirm new password</label>
-                  <div className="relative">
-                    <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-                    <input type={showConfirmPassword ? 'text' : 'password'} placeholder="Confirm new password" id="confirm-password"
-                      className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
-                    <button type="button" className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
-                      onClick={() => setShowConfirmPassword(!showConfirmPassword)}>{showConfirmPassword ? 'Hide' : 'Show'}</button>
-                  </div>
-                </div>
+      {/* Confirm New Password */}
+      <label className="text-sm font-medium text-gray-700">Confirm new password</label>
+      <div className="relative">
+        <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+        <input
+          type={showConfirmPassword ? 'text' : 'password'}
+          placeholder="Confirm new password"
+          id="confirm-password"
+          className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        />
+        <button
+          type="button"
+          className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+          onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+        >
+          {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+        </button>
+      </div>
+    </div>
 
-                <button onClick={handleResetPassword} className="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">Reset Password</button>
-                <button onClick={closeResetModal} className="mt-3 text-sm text-gray-500 hover:text-gray-700">Cancel</button>
-              </>
-            )}
+    <button
+      onClick={handleResetPassword}
+      className="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+    >
+      Reset Password
+    </button>
+
+    <button
+      onClick={closeResetModal}
+      className="mt-3 text-sm text-gray-500 hover:text-gray-700"
+    >
+      Cancel
+    </button>
+  </>
+)}
 
           </div>
         </div>

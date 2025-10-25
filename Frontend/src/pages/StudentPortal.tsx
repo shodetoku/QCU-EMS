@@ -7,6 +7,8 @@ const StudentPortal: React.FC = () => {
   const navigate = useNavigate();
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   const [activeTab, setActiveTab] = useState<TabType>('profile');
+  const [isClosing, setIsClosing] = useState(false);
+
   const [preEnlistmentStep, setPreEnlistmentStep] = useState<'form' | 'review' | 'submitted'>('form');
   const [formData, setFormData] = useState({
     name: '',
@@ -56,11 +58,24 @@ const StudentPortal: React.FC = () => {
  // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const handleLogout = () => setShowLogoutModal(true);
 
-  const confirmLogout = () => {
+  const cancelLogout = () => {
+  setIsClosing(true);
+  setTimeout(() => {
+    setShowLogoutModal(false);
+    setIsClosing(false);
+  }, 200); 
+};
+
+const confirmLogout = () => {
+  setIsClosing(true);
+  setTimeout(() => {
+    setShowLogoutModal(false);
+    setIsClosing(false);
     localStorage.removeItem('loggedInUser');
     navigate('/login');
-  };
-  const cancelLogout = () => setShowLogoutModal(false);
+  }, 200);
+};
+
 
   const handleNotifications = () => {
     // This is where you would typically show a notification modal or navigate
@@ -282,8 +297,17 @@ const handleLogout = () => setShowLogoutModal(true);
 
          {/* ===== Logout Confirmation Modal ===== */}
 {showLogoutModal && (
-  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-    <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center">
+  <div
+    className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 ${
+      isClosing ? 'animate-fadeOut' : 'animate-fadeIn'
+    }`}
+  >
+    <div
+      className={`bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center ${
+        isClosing ? 'animate-scaleOut' : 'animate-scaleIn'
+      }`}
+    >
+
       <h2 className="text-lg font-semibold mb-4">Confirm Logout</h2>
       <p className="text-gray-600 mb-6">Are you sure you want to log out?</p>
       <div className="flex justify-center gap-4">
@@ -412,8 +436,19 @@ const handleLogout = () => setShowLogoutModal(true);
           </div>
         </div>
       </div>
+    
+  
+  
+
+      {/* ===== Animations ===== */}
+      <style>{`
+        @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+        @keyframes scaleIn { from { transform: scale(0.9); opacity: 0 } to { transform: scale(1); opacity: 1 } }
+        .animate-fadeIn { animation: fadeIn 0.2s ease-out; }
+        .animate-scaleIn { animation: scaleIn 0.2s ease-out; }
+      `}</style>
     </div>
+
   );
 };
-
 export default StudentPortal;
